@@ -2,7 +2,19 @@
 TASK 1 🚀
 // in your own words explain what a closure is below in comments and then write an example of a closure. Try to make this explaination simple enough to explain to a younger sibling. */
 
+console.log('********** Task 1 **********');
+// A closure is a function that allows an inner function to have access to the scope of an outer function.
 
+function outerFunc() {
+  const myScope = outer;
+  function displayScope(){
+    alert(myScope);
+
+  }
+  displayScope();
+
+}
+console.log(outerFunc);
 
 
 
@@ -20,31 +32,48 @@ function counterMaker() {
     }
   }
 
+  console.log('********** Task 2 **********');
+// count is in the higher order , outer, function.
+
+// let keeps the variable local and thus can only be accessed by the progeny functions contained within it.  var would still allow the to be changed but would also make it open to global initiation.  const, while it would keep it local, it would not allow the variable to change as it needs to as the count changes.
+
+// by using var the scope of the variable would change to outside the higher order function and be accseesed by other functions not directly related to it.
 
 
 
-
-
+console.log('********** Task 3 **********');
 /*
 TASK 3 🚀
 * The for principles of "this";
 * in your own words. explain the four principle for the "this" keyword below.
 *
-* 1. 
-* 2. 
-* 3. 
-* 4. 
+* 1. (this) inside a window object remains in the global scope
+* 2. (this.array) refers to the entity to the left og the dot, or the named array the example points to
+* 3. when used outside of (), this.dog, refers to the object created by the constructor function
+* 4. when used with .call, or .apply this is explicitly defined.
 *
 * write out a code example of each explanation above
 */
 
 // Principle 1
 
-// code example for Window Binding
+function myWife(name) {
+  console.log("Introducing " + name);
+  console.log(this);
+};
+myWife('Robin');
 
 // Principle 2
 
-// code example for Implicit Binding
+var mySon = {
+  intro: 'Also arriving, ',
+  speak: function(name) {
+    console.log(this.intro + name);
+    console.log(this);
+  }
+}
+
+mySon.speak('Timothy');
 
 // Principle 3
 
